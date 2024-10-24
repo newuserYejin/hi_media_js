@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>02. 태그 이름을 이용한 요소 노드 취득</h1>
+
+    <ul id="food">
+        <li>김치찌개</li>
+        <li>불고기백반</li>
+        <li>이탈리안 BLT</li>
+    </ul>
+    
+    <ul id="drink">
+        <li>밀키스</li>
+        <li>하늘보리</li>
+        <li>맥콜</li>
+    </ul>
+
+    <script>
+        const $lists = document.getElementsByTagName('li');
+
+        console.log($lists)
+
+        let change = 0;
+        let bold = 1;
+        for(let i = 0;i< $lists.length; i++){
+            $lists[i].style.backgroundColor = "rgb(241,230, "+ change +")"
+
+            change += 50;
+        }
+        
+        // 베열로 변경. 스프레드 문법
+        const test = [...$lists];
+        console.log(test);
+
+        [...$lists].forEach(item =>{
+            item.style.border = "solid " + bold + "px rgb(120,50, "+ change +")"
+            bold ++;
+        })
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It's my eyes!!!!!!!!!!!</title>
+
+    <style>
+        .area{
+            border: solid 1px black;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1>01. id 를 이용한 요소 노드 취득하기</h1>
+    <pre>
+
+
+    </pre>
+
+    <!-- 
+        # -> id
+        . -> class
+        {} -> text
+        * -> repeat
+        $ -> auto increamant
+    -->
+
+    <div id="area1" class="area">
+        div영역
+        <p id="area2">p 태그 영역</p>
+    </div>
+    
+    <div id="area1" class="area">
+        div영역
+    </div>
+
+    <script>
+        // dom 요소(document 로 부터 가져오는 요소)라고 하는것을 알려주기 위해 $를 쓴다.
+        const $element = document.getElementById('area1')
+        console.log($element)
+
+        $element.style.backgroundColor = "orange"
+    </script>
+
+</body>
+</html>
