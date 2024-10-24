@@ -96,7 +96,7 @@ console.log("sum2: ",sum2)
  */
 
 // 10 이상인 요소가 있는지 없는지 반환
-let result = [1,4,5,8,9,].some(item => item > 10);
+let result = [1,4,5,8,9].some(item => item > 10);
 
 console.log("result: ", result)
 
