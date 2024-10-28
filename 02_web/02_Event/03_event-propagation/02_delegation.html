@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .highlight{
+            font-family: bolder;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>이벤트 위임</h1>
+    
+    <ul id="bao">
+        <li>푸바오</li>
+        <li>아이바오</li>
+        <li>러바오</li>
+    </ul>
+
+    <script>
+        const $bao = document.getElementById("bao")
+
+        // ul 클릭시에만이 아니라 li 클릭시 각각의 li에 동작하도록 작성
+        $bao.addEventListener('click', (e) =>{
+            if(e.target.matches('li')){
+                highlight(e.target);
+            }
+        })
+
+        function highlight(target){
+            target.classList.toggle('highlight');
+        }
+
+    </script>
+
+</body>
+</html>

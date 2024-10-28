@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="btn">클릭</button>
+    
+    <script>
+        const $btn = document.getElementById("btn");
+
+        const handleClick = () =>{
+            alert('클릭했네')
+        }
+
+        $btn.addEventListener('click',handleClick);
+
+        $btn.removeEventListener('click',handleClick)
+
+        // 참조 불가능하게 직접 작성한 이벤트는 removeEventListener로 삭제 불가
+
+        $btn.addEventListener('mouseover',()=>alert('호버 함'));
+        $btn.removeEventListener('mouseover',()=>alert('호버 함'));
+    </script>
+
+    <!-- 프로퍼티로 지정한 함수 삭제하기 -->
+     <button id="btn2">클릭 좀</button>
+
+     <script>
+        const $btn2 = document.getElementById("btn2")
+
+        const hanbleDouble = () => alert("더블 클릭함")
+
+        $btn2.ondblclick = hanbleDouble;
+
+        // $btn2.removeEventListener('dblclick',hanbleDouble)       // 프로퍼티로 지정한 이벤트는 삭제 불가
+        $btn2.ondblclick = null         // null 값 입력시 기존에 있던 이벤트 제거
+
+     </script>
+</body>
+</html>

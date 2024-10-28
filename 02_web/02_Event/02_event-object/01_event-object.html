@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .area{
+            width: 100px;
+            height: 100px;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <h1>이벤트 객체</h1>
+    
+    <p class="msg">아무곳이나 클릭하면 좌표 알려드림</p>
+
+    <script>
+        const $msg = document.querySelector(".msg")
+
+        function showCoords(e){
+            console.log(e)
+            $msg.textContent = `x좌표 : ${e.clientX}, y좌표 : ${e.clientY}`
+        }
+
+        document.onclick = showCoords;
+
+    </script>
+
+    <!-- 어트리뷰트 방식으로 이벤트를 등록했다면 전달인자는 e가 아닌 event라는 이름으로 전달되어야 한다. -->
+    <div class="area" onclick="showDivCoords(event)">
+        내부 영역 클릭해서
+        좌표 얻기
+    </div>
+
+    <script>
+        const $area = document.querySelector('.area')
+
+        const showDivCoords = (e) =>{
+            console.log(e)
+            $area.textContent = `x좌표 : ${e.clientX}, y좌표 : ${e.clientY}`
+        }
+    </script>
+    
+</body>
+</html>

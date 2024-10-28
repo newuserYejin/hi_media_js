@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        ul{background: rebeccapurple;}
+        li{background: burlywood;}
+    </style>
+</head>
+<body>
+
+    <h1>이벤트 전파</h1>
+    
+    <pre>
+        1. 캡쳐링 단계(capturing phase) : 상위요소에서 하위요소로 전파
+        2. 타겟 단계(target phase)  :이벤트가 이벤트 타겟에 도달
+        3. 버블링 단계(Bubbling phase) : 이벤트가 하위요소에서 상위요소로 전파
+    </pre>
+
+    <ul id="drink">
+        <li>맥콜</li>
+        <li>사이다</li>
+        <li>제로콜라</li>
+    </ul>
+
+    <script>
+
+        const $drink = document.getElementById("drink")
+
+        $drink.addEventListener('click', e =>{
+            console.log(e.eventPhase)
+            console.log(e.target)
+            console.log(e.currentTarget)
+        })        
+
+    </script>
+
+    <ul id="food">
+        <li>김치찌개</li>
+        <li>된장찌개</li>
+        <li>부대찌개</li>
+    </ul>
+
+    <script>
+        const $food = document.getElementById('food')
+
+        $food.addEventListener('click', e => {
+            console.log(e.eventPhase)
+            console.log(e.target)
+            console.log(e.currentTarget)
+        },true)
+
+    </script>
+
+</body>
+</html>

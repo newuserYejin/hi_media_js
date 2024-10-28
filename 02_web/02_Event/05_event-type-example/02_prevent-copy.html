@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>선택 막기, 복사 막기</h1>
+    
+    <span>드래그랑 더블 클릭 안댐</span>
+
+    <div>
+        영국 시작 다음 너임 알지? 7통 ㄱㄱ, 복붙 ㄴㄴ, ㅅㄱ
+    </div>
+
+    <script>
+        const $span = document.querySelector('span');
+        $span.onmousedown = e => e.preventDefault();
+        $span.onmousemove = e => e.preventDefault();
+
+        const $div = document.querySelector('body')
+        $div.oncopy = () =>{
+            alert('복사 될 줄 알았음?')
+            return false;
+        }
+    </script>
+
+
+</body>
+</html>

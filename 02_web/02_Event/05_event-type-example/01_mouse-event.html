@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .area{
+            background-color: lightcoral;
+            border: solid 1px black;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>01. 마우스 관련 이벤트</h1>
+
+    <ul>
+        <li>mousedown/up</li>
+        <li>mouseover/out</li>
+        <li>mousemove</li>
+        <li>click</li>
+        <li>contextmenu</li>
+    </ul>
+
+    <button>클릭</button>
+    <div  class="area"></div>
+
+    <script>
+        const $btn = document.querySelector("button")
+        const $div = document.querySelector(".area")
+
+        // $btn.onmousedown = e => {
+        //     $div.insertAdjacentHTML('beforeEnd','mouse down button = '+e.button + "<br>")
+        // }
+
+        // $btn.onmouseup = e => {
+        //     $div.insertAdjacentHTML('beforeEnd','mouse up button = '+e.button + "<br>")
+        // }
+
+        // $btn.onmouseover = e => {
+        //     $div.insertAdjacentHTML('beforeEnd','mouse over button = '+e.button + "<br>")
+        // }
+
+        // $btn.onmouseout = e => {
+        //     $div.insertAdjacentHTML('beforeEnd','mouse out button = '+e.button + "<br>")
+        // }
+
+        // $btn.onclick = e => {
+        //     $div.insertAdjacentHTML('beforeEnd','mouse click button = '+e.button + "<br>")
+        // }
+
+        // $btn.ondblclick = e => {
+        //     $div.insertAdjacentHTML('beforeEnd','double click button = '+e.button + "<br>")
+        // }
+
+        $btn.oncontextmenu = e => {
+            $div.insertAdjacentHTML('beforeEnd','oncontextmenu button = '+e.button + "<br>")
+        }
+
+    </script>
+</body>
+</html>

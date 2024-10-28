@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>이벤트 리스너</h1>
+
+    <pre>
+        EventTarget.addEventListener('eventType',functionName, [])
+    </pre>
+
+    <button id="btn">클릭</button>
+
+    <script>
+        const $btn = document.getElementById('btn')
+
+        $btn.addEventListener('click',function(){
+            alert('님이 클릭함')
+        })
+
+        $btn.onclick = ho = () =>{
+            console.log("눌렀다니까")
+        }
+
+        $btn.addEventListener('click',function(){
+            console.log("add 출력문입니다.")
+        })
+
+        const mouseover = () => console.log("마우스 호버")
+
+        $btn.addEventListener('mouseover',mouseover);
+        $btn.addEventListener('mouseover',mouseover);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>이벤트 전파</h1>
+
+    <ul id="bao">
+        <li>푸바오</li>
+        <li>아이바오</li>
+        <li>러바오</li>
+    </ul>
+
+    <script>
+        const $bao = document.getElementById('bao')
+
+        $bao.addEventListener('click', e =>{
+            if(e.target.matches('li')){
+                e.target.style.color = 'red'
+            }
+        })
+
+        document.querySelector('li').addEventListener('click', e => {
+            e.stopPropagation();
+        })
+
+    </script>
+</body>
+</html>

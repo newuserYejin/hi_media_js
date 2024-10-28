@@ -9,5 +9,19 @@
     
     <h1>이벤트 핸들러</h1>
 
+    <button onclick="alert('이벤트 발생'); console.log('hi')">클릭하기</button>
+    <button onmouseover="hello('끼야호')">마우스 올리기</button>
+
+    <script>
+        function hello(str){
+            alert(`${str}님 안녕하세요`)
+        }
+    </script>
+
+    <!--
+        어크리뷰트 방식으로 이벤트 핸들러를 등록 사용하면,
+        js 언어도 추가되어 js를 모르는 사람도 혼란에 빠질 수 있다.
+    -->
+
 </body>
 </html>
