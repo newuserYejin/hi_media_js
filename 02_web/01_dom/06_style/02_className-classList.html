@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .area{
+            width: 100px;
+            height: 100px;
+            border: solid 1px blue;
+        }
+
+        .circle {
+            border-radius: 50%;
+        }
+
+        .lightGray{
+            background-color: lightgray;
+        }
+
+        .yellow{
+            background-color: yellow;
+        }
+
+        .nemo{
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+        }
+
+    </style>
+</head>
+<body>
+ 
+    <h1>className과 classList</h1>
+
+    <div class="area"></div>
+
+    <script>
+
+        const $area = document.querySelector(".area")
+
+        console.log($area)
+
+        $area.classList.add("circle")
+        $area.classList.add("lightGray")
+
+        // $area.className = "nemo";
+
+        console.log($area.classList.item(0))
+
+        $area.classList.replace('lightGray','yellow')
+
+        $area.classList.toggle('yellow')
+        $area.classList.toggle('yellow')
+
+    </script>
+</body>
+</html>

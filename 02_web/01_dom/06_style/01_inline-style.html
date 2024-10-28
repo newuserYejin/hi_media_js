@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>inline - style</h1>
+
+    <div style="color: white;">AREA</div>
+
+    <script>
+        const $area = document.querySelector('div')
+        console.log($area)
+        console.log($area.style)
+
+        $area.style.color = "pink"
+        $area.style.height = "100px"
+        $area.style.width = "100px"
+        $area.style.border = "solid 1px red"
+
+    </script>
+</body>
+</html>
