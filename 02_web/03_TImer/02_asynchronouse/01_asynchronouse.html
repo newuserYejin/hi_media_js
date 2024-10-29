@@ -8,5 +8,27 @@
 <body>
     <h1>비동기</h1>
     
+    <script>
+
+        function sleep(func , delay){
+
+            const delayTime = Date.now + delay
+
+            while(Date.now() < delayTime){
+                console.log("호이짜")
+            }
+        }
+
+        function delay(){
+            console.log('시간 늦추기')
+        }
+
+        function start(){
+            console.log('시작')
+        }
+
+        setTimeout(delay, 3000)
+        start();
+    </script>
 </body>
 </html>

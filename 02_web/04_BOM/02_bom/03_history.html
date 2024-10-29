@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>history</h1>
+
+    <button id="btn1">앞으로 가기</button>
+    <button id="btn2">뒤로 가기</button>
+    <input type="number" name="page">
+    <button id="btn3">입력만큼 이동</button>
+    <button id="btn4">이동</button>
+
+    <script>
+        for(prop in history){
+            console.log(`${prop} : ${history[prop]}`)
+        }
+
+        document.getElementById('btn1').onclick = () => history.forward();
+        document.getElementById('btn2').onclick = () => history.back();
+        document.getElementById('btn3').onclick = () =>{
+            let page = document.querySelector('input[name=page]').value;
+            history.go(page)
+        }
+
+        document.getElementById('btn4').onclick = () =>location.href = "https://www.daum.net"
+
+    </script>
+    
+</body>
+</html>
