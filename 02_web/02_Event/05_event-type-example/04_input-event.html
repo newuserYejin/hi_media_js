@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .lightGray{
+            background-color: lightgray;
+        }
+
+        .focused{
+            outline: 3px dashed red;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <h1>사용자의 입력 관련 이벤트</h1>
+
+    <form action="#" name="join">
+        <label for="username">이름</label>
+        <input type="text" name="name" id="username" value="raccoon">
+        <br>
+
+        <label>성별</label>
+        <input type="radio" name="gender" id="male" value="m" checked>
+        <label for="male">남</label>
+        <input type="radio" name="gender" id="female" value="f">
+        <label for="female">여</label>
+        <br>
+
+        <label>나이</label>
+        <select name="age" id="age">
+            <option value="10">10대 이하</option>
+            <option value="20">20대</option>
+            <option value="30">30대</option>
+            <option value="40">40대</option>
+            <option value="50">50대</option>
+            <option value="60">60대</option>
+        </select>
+
+        <label>자기소개 문구</label>
+        <br>
+        <textarea name="introduce" id="introduce" rows="5" cols="30">
+            소개합니당
+        </textarea>
+        <span>0</span>/5000자
+        <br>
+
+        <input type="submit" value="전송">
+    </form>
+
+    <hr>
+
+    <h3>폼 요소 값 다루기</h3>
+
+    <pre>
+        input, textarea : input.value || input.checked
+        select.options : option 하위 요소들을 담고 있는 컬렉션
+        select.value : 현재 선택된 option의 값
+        select.selectedIndex :  현재 선택된 옵션의 index 번호
+    </pre>
+
+    <script>
+        console.log(document.forms)
+        console.log(document.forms.join)             // name으로 접근
+        console.log(document.forms[0])               // index로 접근
+
+        const $form = document.forms.join;
+        
+        const $username = $form.username;
+
+        console.log("$username: ",$username.value)
+        $username.value = "koko"
+
+        const $gender = $form.gender
+        console.log(`$gender.value : ${$gender[0].checked}`)
+        $gender[1].checked = true
+
+        const $age = $form.age;
+        console.log($age.options)
+        console.log($age.value)
+
+        $age.options[3].selected = true
+
+        const $introduce = $form.introduce;
+        console.log($introduce.value)
+        $introduce.value = "안녕"
+
+    </script>
+
+    <h3>focus, blur 이벤트</h3>
+
+    <script>
+        $username.onfocus = (e) =>{
+            e.target.classList.toggle('lightGray')
+        }
+        $username.onblur = (e) =>{
+            e.target.classList.toggle('lightGray')
+        }
+
+        $form.addEventListener('focusin',(e) =>{
+            e.target.classList.add('focused')
+        })
+
+        $form.addEventListener('focusout',(e) =>{
+            e.target.classList.remove('focused')
+        })
+
+        $age.addEventListener('change',(e)=>{
+            alert('변경')
+        })
+
+        $introduce.addEventListener('change',(e) =>{
+            alert(e.target.value)
+        })
+
+        $introduce.addEventListener('input',(e)=>{
+            console.log(e.target.value.trim().length)
+            document.querySelector('span').textContent = e.target.value.trim().length
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="https://search.naver.com/search.naver" name="search" method="get">
+        <input type="text" name="query" placeholder="검색 키워드 작성">
+        <button type="submit">검색</button>
+    </form>
+    
+    <script>
+
+        const $form = document.forms.search
+
+        console.log(document)
+
+        $form.onsubmit = function(){
+            let keyword = this.querySelector('input[name=query]').value
+
+            if(!keyword){
+               alert('검색어는 필수')
+               return false 
+            }
+        }
+
+    </script>
+
+</body>
+</html>

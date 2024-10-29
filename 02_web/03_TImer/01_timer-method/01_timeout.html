@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        setTimeout(()=>console.log('1초 지남'),1000)
+
+        setTimeout((msg) => console.log(`1..2..3..${msg}`),4000, '전달값임')
+
+        const timeoutid = setTimeout(()=>console.log('취소될 예정'),2000)
+        console.log(timeoutid)
+
+        clearTimeout(timeoutid)
+    </script>
+</body>
+</html>
